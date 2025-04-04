@@ -1,0 +1,405 @@
+/* --- Global Styles & Variables --- */
+:root {
+  --bg-color: #0f0c29; /* Dark purple/blue base */
+  --sidebar-bg: rgba(10, 8, 30, 0.9); /* Slightly darker, more opaque sidebar */
+  --main-bg: rgba(25, 21, 51, 0.85); /* Translucent main content bg */
+  --card-bg: rgba(40, 35, 70, 0.9); /* Darker cards/controls background */
+  --header-bg: #3a3172; /* Table header background */
+  --text-light: #e0e0e0;
+  --text-medium: #a0a0c0;
+  --text-dark: #333; /* For contrast on light elements if needed */
+  --accent-blue: #6c63ff; /* A brighter accent */
+  --accent-light-blue: #8c88ff;
+  --border-color: rgba(100, 100, 150, 0.3);
+  --hover-bg: rgba(255, 255, 255, 0.1);
+  --link-color: #a0d2eb; /* Light blue for links */
+
+  --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--bg-color); /* Fallback */
+  /* --- Add your space background image here! --- */
+  background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8c3BhY2V8fHx8fHwxNjE2NjY0MjYy&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080'); /* Example space background */
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed; /* Keeps background stationary */
+  color: var(--text-light);
+  line-height: 1.6;
+  height: 100vh; /* Ensure body takes full height */
+  overflow: hidden; /* Prevent body scroll, allow main content scroll */
+}
+
+/* --- Main App Layout --- */
+.astro-app-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* --- Sidebar --- */
+.sidebar {
+  width: 240px;
+  background-color: var(--sidebar-bg);
+  backdrop-filter: blur(5px); /* Optional: blur effect for sidebar */
+  padding: 25px 15px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0; /* Prevent sidebar from shrinking */
+  border-right: 1px solid var(--border-color);
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.sidebar-header .logo {
+  font-size: 2rem;
+  margin-right: 10px;
+  /* Add styles for your actual logo image if you use one */
+}
+
+.sidebar-header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+.sidebar-nav ul {
+  list-style: none;
+}
+
+.sidebar-nav li {
+  margin-bottom: 10px;
+}
+
+.sidebar-nav a {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  color: var(--text-medium);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  font-weight: 500;
+}
+
+.sidebar-nav a span { /* Icon styling */
+   margin-right: 12px;
+   font-size: 1.1rem;
+}
+
+.sidebar-nav a:hover {
+  background-color: var(--hover-bg);
+  color: var(--text-light);
+}
+
+.sidebar-nav li.active a {
+  background-color: var(--accent-blue);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* --- Main Content Area --- */
+.main-content {
+  flex-grow: 1;
+  background-color: var(--main-bg);
+  backdrop-filter: blur(3px); /* Optional: slight blur */
+  padding: 30px;
+  overflow-y: auto; /* Allow scrolling ONLY in the main content */
+  height: 100vh; /* Take full viewport height */
+}
+
+/* Header Cards (Summary Stats) */
+.main-header-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.header-card {
+  background-color: var(--card-bg);
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-color);
+}
+
+.header-card h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: var(--text-medium);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.header-card p {
+  margin-bottom: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-light);
+}
+
+
+/* Controls Area (Search & Filter) */
+.controls-area {
+   background-color: var(--card-bg);
+   padding: 20px;
+   border-radius: 8px;
+   margin-bottom: 30px;
+   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+   border: 1px solid var(--border-color);
+}
+
+.search-filter-bar {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping */
+    gap: 20px;
+    align-items: flex-end; /* Align items to bottom */
+}
+
+.search-input, .filter-input {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allow inputs to grow */
+    min-width: 200px; /* Minimum width before wrapping */
+}
+
+.controls-area label {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: var(--text-medium);
+    font-weight: 500;
+}
+
+.controls-area input[type="text"],
+.controls-area select {
+    padding: 12px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    color: var(--text-light);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.controls-area input[type="text"]:focus,
+.controls-area select:focus {
+    border-color: var(--accent-blue);
+}
+
+.controls-area select {
+   /* Appearance reset for custom dropdown arrow potentially */
+   appearance: none;
+   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23a0a0c0'%3E%3Cpath d='M6 9l-6-6h12z'/%3E%3C/svg%3E"); /* Simple dropdown arrow */
+   background-repeat: no-repeat;
+   background-position: right 12px center;
+   padding-right: 30px; /* Make space for arrow */
+}
+
+.controls-area option {
+   background-color: #282346; /* Darker background for dropdown options */
+   color: var(--text-light);
+}
+
+
+/* Data List Area & Table */
+
+
+.data-list-area h2 {
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  color: var(--text-light);
+  font-weight: 600;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+.table-container {
+    overflow-x: auto; /* Allow horizontal scroll if table is too wide */
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse; /* Use collapse for cleaner lines */
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color); /* Horizontal lines */
+  vertical-align: middle; /* Align text vertically */
+}
+
+th {
+  background-color: var(--header-bg); /* Distinct header background */
+  color: var(--text-light);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+/* Remove border from last row's cells */
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr {
+   transition: background-color 0.2s ease;
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.03); /* Subtle striping */
+}
+
+tbody tr:hover {
+  background-color: var(--hover-bg); /* Hover effect */
+}
+
+td a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+td a:hover {
+  color: var(--accent-light-blue);
+  text-decoration: underline;
+}
+
+/* Status Messages (Loading, Error, No Results) */
+.status-message {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 1.1em;
+  color: var(--text-medium);
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.status-message.loading {
+   background-color: rgba(0, 0, 0, 0.2);
+}
+
+.status-message.error {
+  color: #ff9a9a; /* Light red for error text */
+  background-color: rgba(200, 50, 50, 0.3); /* Translucent red background */
+  border: 1px solid rgba(200, 50, 50, 0.5);
+}
+
+.status-message.no-results {
+  font-style: italic;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.info-note {
+   padding: 10px 0;
+   font-size: 0.9em;
+   color: var(--text-medium);
+   font-style: italic;
+   text-align: center;
+}
+
+
+/* Footer */
+.main-footer {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.9em;
+  color: var(--text-medium);
+}
+
+/* --- Responsive Adjustments (Example) --- */
+@media (max-width: 992px) {
+   .sidebar {
+       width: 200px; /* Slightly smaller sidebar */
+   }
+   .main-header-cards {
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+   }
+}
+
+@media (max-width: 768px) {
+  .astro-app-container {
+      flex-direction: column; /* Stack sidebar and main content */
+      height: auto; /* Allow content to determine height */
+      overflow: auto; /* Allow body scroll */
+  }
+  .sidebar {
+      width: 100%;
+      height: auto; /* Auto height for sidebar */
+      border-right: none;
+      border-bottom: 1px solid var(--border-color);
+      flex-direction: row; /* Make sidebar horizontal */
+      justify-content: space-between; /* Space out logo and nav */
+      align-items: center;
+      padding: 10px 15px;
+  }
+  .sidebar-header {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+  }
+   .sidebar-header h1 {
+      font-size: 1.2rem; /* Smaller logo text */
+  }
+  .sidebar-nav ul {
+      display: flex; /* Nav items side-by-side */
+  }
+  .sidebar-nav li {
+      margin-bottom: 0;
+      margin-left: 5px; /* Space between nav items */
+  }
+   .sidebar-nav a {
+      padding: 8px 10px;
+  }
+   /* Hide text on small screens, show only icon */
+   .sidebar-nav a span:not(.logo) { /* Keep logo visible */
+       margin-right: 5px;
+   }
+   .sidebar-nav a {
+       font-size: 0.9rem;
+   }
+    .main-content {
+        height: auto; /* Allow main content to grow */
+        padding: 20px;
+        overflow-y: visible; /* Don't need separate scroll */
+    }
+     .main-header-cards {
+       grid-template-columns: 1fr; /* Stack header cards */
+       gap: 15px;
+    }
+    .header-card p {
+       font-size: 1.8rem;
+    }
+    .search-filter-bar {
+       flex-direction: column; /* Stack search/filter */
+       align-items: stretch; /* Full width controls */
+       gap: 15px;
+    }
+     .search-input, .filter-input {
+        min-width: unset; /* Remove min-width */
+    }
+}
