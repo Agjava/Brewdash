@@ -42,17 +42,18 @@ The following **additional** features are implemented:
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented user stories:
+Here's a walkthrough of the website:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://imgur.com/a/xyDeEZZ.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-GIF created with Kap
+https://imgur.com/a/xyDeEZZ
+
 
 
 
 ## License
 
-    Copyright 2024 Anvesh Gupta
+    Copyright 2025 Anvesh Gupta
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
