@@ -36,7 +36,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='[Your GIF Link Here]' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='[(https://imgur.com/a/Dl3UBTh)]' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ## License
 
