@@ -1,0 +1,65 @@
+.sidebar {
+    width: 250px; /* Fixed width for sidebar */
+    flex-shrink: 0; /* Prevent sidebar from shrinking */
+    background-color: #e9ecef; /* Light grey background */
+    padding: 20px;
+    border-right: 1px solid #dee2e6; /* Subtle border */
+    height: 100vh; /* Make sidebar full height */
+    position: sticky; /* Stick to the top */
+    top: 0;
+    overflow-y: auto; /* Allow scrolling if content exceeds height */
+  }
+  
+  .sidebar h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #495057; /* Darker grey for heading */
+    border-bottom: 1px solid #ced4da;
+    padding-bottom: 10px;
+  }
+  
+  .filter-group {
+    margin-bottom: 20px;
+  }
+  
+  .filter-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #6c757d; /* Medium grey for labels */
+    font-size: 0.9em;
+  }
+  
+  .filter-group select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 0.9em;
+  }
+  
+  .clear-button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      background-color: #6c757d; /* Bootstrap secondary color */
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9em;
+      transition: background-color 0.2s ease;
+  }
+  
+  .clear-button:hover {
+      background-color: #5a6268;
+  }
+  
+  
+  .sidebar-info {
+      margin-top: 30px;
+      font-size: 0.85em;
+      color: #6c757d;
+      line-height: 1.4;
+  }
