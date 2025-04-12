@@ -4,7 +4,7 @@ Submitted by: **[Anvesh Gupta]**
 
 This web app fetches brewery data from the Open Brewery DB API, displays it in a filterable dashboard with interactive charts (brewery types and top states), and allows users to click on a brewery to navigate to a detailed view with more information.
 
-Time spent: **[10]** hours spent in total
+Time spent: **10** hours spent in total
 
 ## Required Features
 
