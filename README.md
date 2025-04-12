@@ -44,22 +44,6 @@ Here's a walkthrough of implemented user stories:
 
 <img src='[Your GIF Link Here]' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-
-
-
-
-## Notes
-
-[Describe any challenges encountered while building the app. For example:
-*   Learning how to structure routes with React Router v6.
-*   Passing data between components (e.g., filter state from App to Sidebar, brewery list to Dashboard).
-*   Fetching data correctly in the Detail page using `useParams`.
-*   Preparing data from the API into the format required by Recharts.
-*   Making the sidebar persistent across different routes.
-*   Handling potential errors during API calls (e.g., brewery not found, network issues).
-*   Styling the charts and ensuring they were responsive.
-*   Debugging issues related to state updates and re-renders.]
-
 ## License
 
     Copyright [2025] [Anvesh Gupta]
