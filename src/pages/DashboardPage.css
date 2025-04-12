@@ -1,0 +1,71 @@
+.dashboard-page {
+  /* Styles specific to the dashboard content area */
+}
+
+.charts-section {
+  display: flex;
+  flex-wrap: wrap; /* Allow charts to wrap on smaller screens */
+  gap: 20px; /* Space between charts */
+  margin-bottom: 30px;
+}
+
+.chart-container {
+  flex: 1; /* Each chart tries to take equal space */
+  min-width: 300px; /* Minimum width before wrapping */
+  background-color: #fff; /* White background for charts */
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  text-align: center; /* Center chart title */
+}
+
+.chart-container h2 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #495057;
+    border-bottom: none; /* Remove default heading border if set globally */
+}
+
+.brewery-list-section h2 {
+    margin-top: 30px;
+}
+
+.brewery-list {
+  list-style: none;
+  padding: 0;
+}
+
+.brewery-list-item {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.2s ease;
+}
+ .brewery-list-item:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+ }
+
+.brewery-list-item a {
+  text-decoration: none;
+  color: #333;
+  display: block; /* Make the whole item clickable */
+}
+.brewery-list-item a strong {
+  color: #0056b3; /* Highlight name */
+}
+
+.brewery-list-item a:hover strong {
+   text-decoration: underline;
+}
+
+/* Ensure recharts tooltips are visible */
+.recharts-tooltip-wrapper {
+  z-index: 1000 !important; /* High z-index */
+  background: rgba(50, 50, 50, 0.8) !important;
+  border: 1px solid #aaa !important;
+  color: #fff !important;
+  border-radius: 4px;
+  padding: 5px 10px !important;
+}
