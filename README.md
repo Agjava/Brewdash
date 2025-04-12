@@ -1,59 +1,69 @@
-# BrewDash
+# Web Development Project 6 - Brewdash
 
-Submitted by: **Anvesh Gupta**
+Submitted by: **[Anvesh Gupta]**
 
-This web app displays data about breweries fetched from the Open Brewery DB API. It provides a dashboard view with summary statistics, a searchable and filterable list of breweries, including their type, location, and website link.
+This web app fetches brewery data from the Open Brewery DB API, displays it in a filterable dashboard with interactive charts (brewery types and top states), and allows users to click on a brewery to navigate to a detailed view with more information.
 
-Time spent: **10** hours spent in total 
+Time spent: **[10]** hours spent in total
 
 ## Required Features
 
 The following **required** functionality is completed:
 
-- [x] **The site has a dashboard displaying a list of data fetched using an API call**
-  - The dashboard displays at least 10 unique items, one per row (Displays 100 items in the screenshots)
-  - The dashboard includes at least two features in each row (Displays Name, Type, City, State, Website)
-- [x] **`useEffect` React hook and `async`/`await` are used** (Assumed based on successful data fetching and project requirements)
-- [x] **The app dashboard includes at least three summary statistics about the data**
-  - The app dashboard includes at least three summary statistics about the data, such as:
-    - Total number of breweries displayed
-    - Count of micro breweries displayed
-    - Count of brewpubs displayed
-- [x] **A search bar allows the user to search for an item in the fetched data**
-  - The search bar **correctly** filters items in the list, only displaying items matching the search query (Assumed based on UI element presence)
-  - The list of results dynamically updates as the user types into the search bar (Assumed based on standard implementation)
-- [x] **An additional filter allows the user to restrict displayed items by specified categories**
-  - The filter restricts items in the list using a **different attribute** than the search bar (Search by Name, Filter by Brewery Type)
-  - The filter **correctly** filters items in the list, only displaying items matching the filter attribute in the dashboard (Assumed based on UI element presence)
-  - The dashboard list dynamically updates as the user adjusts the filter (Assumed based on standard implementation)
+- [x] **Clicking on an item in the list view displays more details about it**
+  - Clicking on an item in the dashboard list navigates to a detail view for that item
+  - Detail view includes extra information about the item (address, phone, website, map link, etc.) not included in the dashboard view
+  - The same sidebar is displayed in detail view as in dashboard view
+  - *To ensure an accurate grade, your sidebar **must** be viewable when showing the details view in your recording.*
+- [x] **Each detail view of an item has a direct, unique URL link to that item’s detail view page**
+  - *To ensure an accurate grade, the URL/address bar of your web browser **must** be viewable in your recording.* (e.g., `/brewery/some-brewery-id`)
+- [x] **The app includes at least two unique charts developed using the fetched data that tell an interesting story**
+  - At least two charts (Pie chart for brewery types, Bar chart for top states by brewery count) are incorporated into the dashboard view of the site using the Recharts library.
+  - Each chart describes a different aspect of the dataset (type distribution vs. geographical distribution).
 
 The following **optional** features are implemented:
 
-- [x] Multiple filters can be applied simultaneously (Search and Type filter work together, but not multiple *distinct* category filters beyond that)
-- [x] Filters use different input types
-  - e.g., Text input for search, dropdown selection for Brewery Type.
+- [x] The site’s customized dashboard contains more content that explains what is interesting about the data
+    
+- [x] The site allows users to toggle between different data visualizations
+    
 
 The following **additional** features are implemented:
 
-* [x] Clean, dark-themed UI with sidebar navigation (Dashboard, Search, About).
-* [x] Clickable "Visit Site" links that likely open the brewery's website (or show N/A if no website provided).
-* [x] Displays the total count of matching breweries based on current filters.
-* [x] Clear visual separation of summary cards, search/filter controls, and the data table.
+* [x] Implemented filtering functionality by brewery type and state/province via dropdowns in the sidebar.
+* [x] Added a 'Clear Filters' button to reset the type and state filters.
+* [x] Included loading indicators and error messages for data fetching states.
+* [x] Used the Recharts library for creating interactive Pie and Bar charts.
+* [x] Styled components for a clearer user interface, including layout, sidebar, charts, list, and detail page.
+* [x] Made phone numbers and website URLs clickable links in the detail view.
+* [x] Added a Google Maps link based on latitude/longitude in the detail view.
 
 ## Video Walkthrough
 
-Here's a walkthrough of the website:
+Here's a walkthrough of implemented user stories:
 
-<img src='https://imgur.com/a/xyDeEZZ.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
-https://imgur.com/a/xyDeEZZ
+<img src='[Your GIF Link Here]' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
 
+GIF created with [Tool Name e.g., Kap, ScreenToGif, peek]
+
+
+## Notes
+
+[Describe any challenges encountered while building the app. For example:
+*   Learning how to structure routes with React Router v6.
+*   Passing data between components (e.g., filter state from App to Sidebar, brewery list to Dashboard).
+*   Fetching data correctly in the Detail page using `useParams`.
+*   Preparing data from the API into the format required by Recharts.
+*   Making the sidebar persistent across different routes.
+*   Handling potential errors during API calls (e.g., brewery not found, network issues).
+*   Styling the charts and ensuring they were responsive.
+*   Debugging issues related to state updates and re-renders.]
 
 ## License
 
-    Copyright 2025 Anvesh Gupta
+    Copyright [2025] [Anvesh Gupta]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
